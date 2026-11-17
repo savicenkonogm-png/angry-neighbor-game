@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angry Neighbor 3D</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-root">
+      <canvas id="gameCanvas"></canvas>
+
+      <div id="menuScreen" class="screen active">
+        <div class="menu-card">
+          <h1>ANGRY NEIGHBOR</h1>
+          <p class="subtitle">
+            Розкрий секрети сусіда, виконуй кумедні завдання і не дай йому себе помітити.
+          </p>
+
+          <div class="menu-grid">
+            <div class="menu-actions">
+              <button id="playBtn" class="primary">PLAY</button>
+              <button id="continueBtn" class="secondary">CONTINUE</button>
+              <button id="resetBtn" class="secondary danger">RESET SAVE</button>
+            </div>
+
+            <div class="settings-panel">
+              <div class="panel-title">Settings</div>
+              <div class="setting-row">
+                <span>Difficulty</span>
+                <span id="difficultyText">Normal</span>
+              </div>
+              <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn active" data-difficulty="normal">Normal</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+              </div>
+
+              <div class="setting-row">
+                <span>Music</span>
+                <button id="musicToggle" class="toggle-btn active">On</button>
+              </div>
+              <div class="setting-row">
+                <span>SFX</span>
+                <button id="sfxToggle" class="toggle-btn active">On</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hud" class="hud hidden">
+        <div class="panel status-panel-left">
+          <div class="stat-row">
+            <span class="label">Neighbor Mood</span>
+            <span id="moodText">Calm</span>
+          </div>
+          <div class="meter">
+            <div id="moodMeter" class="meter-fill"></div>
+          </div>
+          <div class="stat-row">
+            <span class="label">Day</span>
+            <span id="timeText">Day</span>
+          </div>
+        </div>
+
+        <div class="panel status-panel-right">
+          <div class="task-line">
+            <span class="label">Tasks</span>
+            <strong id="taskCounter">0 / 30</strong>
+          </div>
+          <div class="status-line">
+            <span id="objectiveText">Explore the street</span>
+          </div>
+        </div>
+
+        <div class="panel inventory-panel">
+          <div class="task-line">
+            <span class="label">Inventory</span>
+            <strong id="inventoryCount">0</strong>
+          </div>
+          <div id="inventoryGrid" class="inventory-grid"></div>
+        </div>
+
+        <div class="panel hint-panel">
+          <div class="label">Hint</div>
+          <div id="hintText">Tip: stay out of windows and keep moving when the neighbor looks around.</div>
+        </div>
+
+        <div class="panel objective-panel">
+          <span id="objectiveBanner">Find the first key and sneak into the side gate.</span>
+        </div>
+      </div>
+
+      <div id="toast" class="toast">Message</div>
+      <div class="crosshair"></div>
+
+      <div id="gameOverScreen" class="screen overlay hidden">
+        <div class="overlay-card">
+          <h2>YOU GOT CAUGHT</h2>
+          <p>The neighbor spotted you. Try another route or stay quieter.</p>
+          <div class="overlay-actions">
+            <button id="restartBtn" class="primary danger">TRY AGAIN</button>
+            <button id="menuBtn" class="secondary">MAIN MENU</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="victoryScreen" class="screen overlay hidden">
+        <div class="overlay-card">
+          <h2>CASE SOLVED</h2>
+          <p>You uncovered the secret and outsmarted the angry neighbor.</p>
+          <div class="overlay-actions">
+            <button id="nextLevelBtn" class="primary success">NEXT LEVEL</button>
+            <button id="menuBtn2" class="secondary">MAIN MENU</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

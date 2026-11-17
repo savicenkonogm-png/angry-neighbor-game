@@ -1,0 +1,36 @@
+# Angry Neighbor 3D
+
+A browser-based 3D-inspired stealth game inspired by the tone of Hello Neighbor / Angry Neighbor, built in plain HTML, CSS and JavaScript.
+
+## Features
+- First-person inspired pseudo-3D camera and gameplay loop
+- Full main menu, settings and difficulty options
+- Day/night cycle and mood meter for the neighbor
+- AI patrol + chase logic with tension and suspicion
+- Inventory and over 30 task goals
+- 10 level progression concept
+- Save/load support using localStorage
+- Lose and win screens
+- Basic procedural sound effects
+
+## Run locally
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## Controls
+- WASD / Arrow keys: movement
+- Shift: sprint
+- E: interact
+- Mouse: look around after clicking the canvas
+- Escape: main menu
+
+## Notes
+This project is a polished browser game prototype designed to be easy to run and extend. It intentionally uses lightweight canvas rendering and procedural audio rather than heavy 3D assets so it runs well in a browser.
